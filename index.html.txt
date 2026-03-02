@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Uma surpresa para você ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #141e30, #243b55);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Tela inicial */
+#inicio {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4b7d;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Conteúdo escondido */
+#conteudo {
+    display: none;
+    padding: 30px;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.carta {
+    width: 80%;
+    margin: 30px auto;
+    font-size: 22px;
+    background: rgba(255,255,255,0.2);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+img {
+    width: 250px;
+    margin: 15px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Corações */
+.heart {
+    position: fixed;
+    top: -10px;
+    font-size: 24px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="inicio">
+    <h2>Eu tenho uma surpresa para você... ❤️</h2>
+    <button onclick="mostrarSurpresa()">Clique para descobrir 💌</button>
+</div>
+
+<div id="conteudo">
+    <h1 id="nome"></h1>
+
+    <iframe style="border-radius:12px" 
+    src="https://open.spotify.com/embed/track/0mAttmH9upkhynodugWzPS?utm_source=generator" 
+    width="80%" height="352" frameBorder="0" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy"></iframe>
+
+    <div class="carta">
+    <p>
+    Meu amor,
+
+    Desde que você entrou na minha vida, tudo ficou mais bonito.  
+    Você é meu abrigo, meu sorriso favorito, meu melhor presente.
+
+    Se eu pudesse escolher mil vezes, escolheria você em todas ❤️
+
+    Eu te amo infinitamente.
+    </p>
+    </div>
+
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
+</div>
+
+<script>
+function mostrarSurpresa() {
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("conteudo").style.display = "block";
+    digitarNome();
+    iniciarCoracoes();
+}
+
+function digitarNome() {
+    const texto = "Para o Amor da Minha Vida ❤️";
+    let i = 0;
+    function escrever() {
+        if (i < texto.length) {
+            document.getElementById("nome").innerHTML += texto.charAt(i);
+            i++;
+            setTimeout(escrever, 70);
+        }
+    }
+    escrever();
+}
+
+function iniciarCoracoes() {
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }, 300);
+}
+</script>
+
+</body>
+</html>
