@@ -4,35 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>07 • Nosso Primeiro Mês 💙</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Playfair Display', serif; background:radial-gradient(circle at top,#0a1a3a,#050d1f); color:white; overflow:hidden;}
-.stars{position:fixed;width:100%;height:100%;background-image:radial-gradient(white 1px, transparent 1px); background-size:60px 60px;opacity:0.15; animation:starsMove 80s linear infinite;}
-@keyframes starsMove{from{transform:translateY(0);} to{transform:translateY(-1200px);}}
-.section{position:absolute;width:100%;height:100%; display:flex;flex-direction:column;justify-content:center;align-items:center; padding:20px;text-align:center;opacity:0;transition:opacity 1s ease;}
-.active{opacity:1;}
-h1{font-size:32px;margin-bottom:20px;}
-.date{letter-spacing:5px;margin-bottom:30px;opacity:0.7;}
-button{padding:15px 35px;border-radius:40px;border:none;background:white;color:#0a1a3a;font-size:16px;cursor:pointer;transition:0.3s;}
-button:hover{transform:scale(1.08);}
-.envelope{width:220px;height:140px;background:white;position:relative;border-radius:6px;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
-.envelope:before{content:"";position:absolute;border-left:110px solid transparent;border-right:110px solid transparent;border-top:70px solid #dbe6ff;top:0;}
-.letter{background:white;color:#0a1a3a;padding:40px;max-width:750px;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,0.6);overflow-y:auto;max-height:85vh;animation:fadeIn 2s ease;}
-@keyframes fadeIn{from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);}}
-.photo{margin:30px auto;}
-.photo img{width:80%;max-width:400px;border:12px solid white;box-shadow:0 15px 35px rgba(0,0,0,0.4);}
-.latin{font-family:'Great Vibes', cursive;font-size:32px;margin-top:40px;}
+body{margin:0; font-family:sans-serif; background:#0a1a3a; color:white; text-align:center; overflow-x:hidden;}
+button{padding:15px 35px; margin:20px; font-size:16px; cursor:pointer; border-radius:40px; border:none; background:white; color:#0a1a3a;}
+button:hover{transform:scale(1.05);}
+.section{display:none; padding:50px;}
+.section img{max-width:400px; border:10px solid white; margin:20px 0;}
+#scene1{display:block;}
 </style>
 </head>
 <body>
 
-<div class="stars"></div>
-
 <!-- Cena 1 -->
-<div class="section active" id="scene1">
+<div class="section" id="scene1">
   <h1>Existe um momento que muda tudo...</h1>
-  <div class="date">07 • 03 • 2026</div>
+
   <button id="startButton">Iniciar nossa história ✨</button>
 </div>
 
@@ -44,59 +30,48 @@ button:hover{transform:scale(1.08);}
 
 <!-- Cena 3 -->
 <div class="section" id="scene3">
-  <div class="envelope" id="envelope"></div>
-  <p style="margin-top:20px;">Clique no envelope 💌</p>
+  <p>Clique no envelope 💌</p>
+  <button id="envelopeButton">📩 Abrir</button>
 </div>
 
 <!-- Cena 4 -->
 <div class="section" id="scene4">
-  <div class="letter">
-    <h2 style="margin-bottom:25px;">1 Mês de Nós 💙</h2>
-    <p><strong>Desde que você entrou na minha vida, tudo ficou mais bonito.</strong><br>Você é meu abrigo, meu sorriso favorito, meu melhor presente.</p>
-    <p style="margin-top:20px;">Se eu pudesse escolher mil vezes, escolheria você em todas ❤️</p>
-    <div class="photo"><img src="foto1.jpg" alt="Foto 1"></div>
-    <hr style="margin:30px 0;">
-    <p><strong>Hoje a gente completa um mês.</strong><br><br>
-    Pode parecer pouco tempo para o mundo… mas, pra mim, foi tempo suficiente para sentir coisas que são grandes.<br><br>
-    Um mês desde que começamos a escrever essa história que já tem verdade, carinho e presença.<br><br>
-    Eu gosto da forma como você me traz paz.<br>
-    Gosto de como, mesmo no silêncio, eu me sinto segura.<br>
-    Gosto da forma como você fica, sem forçar, só permanecendo.<br><br>
-    Você tem sido resposta das minhas orações.<br>
-    Eu falo com Deus sobre você… e agradeço.<br><br>
-    Eu escolho você.<br>
-    Hoje. Amanhã. Sempre.<br><br>
-    Com amor,<br> Sua namorada e futura esposa 🤍
-    </p>
-    <div class="photo"><img src="foto2.jpg" alt="Foto 2"></div>
-    <div class="latin">Tu es domus mea, semper ad te.</div>
-  </div>
+  <h2>1 Mês de Nós 💙</h2>
+  <p>Meu amor,</p>
+  <p>Hoje a gente completa um mês. Pode parecer pouco tempo para o mundo… mas, pra mim, foi tempo suficiente para sentir coisas que são grandes.<br>
+  Um mês desde que começamos a escrever essa história que já tem verdade, carinho e presença.<br>
+  Eu gosto da forma como você me traz paz.<br>
+  Gosto de como, mesmo no silêncio, eu me sinto segura.<br>
+  Gosto da forma como você existe na minha vida sem forçar, só permanecendo.<br>
+  Você tem sido resposta das minhas orações.<br>
+  Eu falo com Deus sobre você… e agradeço.<br>
+  Eu escolho você hoje, amanhã e sempre.<br>
+  Com amor,<br>Sua namorada e futura esposa 🤍</p>
+  <img src="foto1.jpg" alt="Foto 1">
+
+  <p style="font-family:'cursive'; font-size:28px;">Tu es domus mea, semper ad te.</p>
 </div>
 
-<audio id="music" src="musica.mp3"></audio>
-
-<!-- Script no final do body -->
 <script>
-const startBtn = document.getElementById('startButton');
-const confirmBtn = document.getElementById('confirmButton');
-const envelope = document.getElementById('envelope');
-const music = document.getElementById('music');
+const scene1 = document.getElementById('scene1');
+const scene2 = document.getElementById('scene2');
+const scene3 = document.getElementById('scene3');
+const scene4 = document.getElementById('scene4');
 
-function nextScene(current,next){
-    const cur = document.getElementById(current);
-    const nxt = document.getElementById(next);
-    if(cur && nxt){
-        cur.classList.remove("active");
-        setTimeout(()=>{ nxt.classList.add("active"); }, 500);
-    }
-}
+document.getElementById('startButton').onclick = function(){
+  scene1.style.display='none';
+  scene2.style.display='block';
+};
 
-startBtn.addEventListener('click', ()=> nextScene('scene1','scene2'));
-confirmBtn.addEventListener('click', ()=>{
-    if(music) music.play();
-    nextScene('scene2','scene3');
-});
-envelope.addEventListener('click', ()=> nextScene('scene3','scene4'));
+document.getElementById('confirmButton').onclick = function(){
+  scene2.style.display='none';
+  scene3.style.display='block';
+};
+
+document.getElementById('envelopeButton').onclick = function(){
+  scene3.style.display='none';
+  scene4.style.display='block';
+};
 </script>
 
 </body>
