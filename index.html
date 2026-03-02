@@ -1,157 +1,188 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Uma surpresa para você ❤️</title>
+<title>Nosso Primeiro Mês 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #141e30, #243b55);
-    text-align: center;
-    font-family: Arial, sans-serif;
-    color: white;
-    overflow-x: hidden;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #0f1c2e, #1f3a5f, #2c5282);
+    color: #1a2a40;
+    animation: fadeIn 2s ease-in-out;
 }
 
-/* Tela inicial */
-#inicio {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-button {
-    padding: 15px 30px;
-    font-size: 20px;
-    border: none;
-    border-radius: 30px;
-    background: #ff4b7d;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: scale(1.1);
-}
-
-/* Conteúdo escondido */
-#conteudo {
-    display: none;
-    padding: 30px;
-    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 25px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    line-height: 1.9;
 }
 
 h1 {
-    font-size: 40px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 38px;
+    color: #1f3a5f;
+    margin-bottom: 40px;
 }
 
-.carta {
-    width: 80%;
-    margin: 30px auto;
-    font-size: 22px;
-    background: rgba(255,255,255,0.2);
-    padding: 25px;
+.section {
+    margin-bottom: 50px;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+.foto {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.foto img {
+    width: 100%;
+    max-width: 450px;
     border-radius: 20px;
+    border: 5px solid #2c5282;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    transition: transform 0.6s ease;
 }
 
-img {
-    width: 250px;
-    margin: 15px;
-    border-radius: 20px;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+.foto img:hover {
+    transform: scale(1.04);
 }
 
-/* Corações */
-.heart {
-    position: fixed;
-    top: -10px;
+.assinatura {
+    margin-top: 30px;
+}
+
+.assinatura strong {
+    font-family: 'Dancing Script', cursive;
     font-size: 24px;
-    animation: fall linear infinite;
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(100vh);
-    }
+.latim {
+    margin-top: 25px;
+    text-align: center;
+    font-style: italic;
+    color: #2c5282;
+    font-size: 18px;
+}
+
+.divisor {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #2c5282, transparent);
+    margin: 50px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 </style>
 </head>
 
 <body>
 
-<div id="inicio">
-    <h2>Eu tenho uma surpresa para você... ❤️</h2>
-    <button onclick="mostrarSurpresa()">Clique para descobrir 💌</button>
-</div>
+<div class="container">
 
-<div id="conteudo">
-    <h1 id="nome"></h1>
+    <h1>🤍 Nosso Primeiro Mês 🤍</h1>
 
-    <iframe style="border-radius:12px" 
-    src="https://open.spotify.com/embed/track/0mAttmH9upkhynodugWzPS?utm_source=generator" 
-    width="80%" height="352" frameBorder="0" 
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-    loading="lazy"></iframe>
+    <!-- PRIMEIRO TEXTO -->
+    <div class="section">
+        <p><strong>Meu amor,</strong></p>
 
-    <div class="carta">
-    <p>
-    Meu amor,
+        <p>
+        Desde que você entrou na minha vida, tudo ficou mais bonito.<br>
+        Você é meu abrigo, meu sorriso favorito, meu melhor presente.
+        </p>
 
-    Desde que você entrou na minha vida, tudo ficou mais bonito.  
-    Você é meu abrigo, meu sorriso favorito, meu melhor presente.
+        <p>
+        Se eu pudesse escolher mil vezes, escolheria você em todas ❤️
+        </p>
 
-    Se eu pudesse escolher mil vezes, escolheria você em todas ❤️
-
-    Eu te amo infinitamente.
-    </p>
+        <p>
+        Eu te amo infinitamente.
+        </p>
     </div>
 
-    <img src="foto1.jpg">
-    <img src="foto2.jpg">
+    <!-- FOTO 1 -->
+    <div class="foto">
+        <img src="foto1.jpg" alt="Nossa primeira foto">
+    </div>
+
+    <div class="divisor"></div>
+
+    <!-- CARTA DO MÊS -->
+    <div class="section">
+
+        <p><strong>Meu amor,</strong></p>
+
+        <p>
+        Hoje a gente completa um mês. Pode parecer pouco tempo para o mundo…
+        mas, pra mim, foi tempo suficiente para sentir coisas que são grandes.
+        </p>
+
+        <p>
+        Um mês desde que começamos a escrever essa história que, mesmo recente,
+        já tem verdade, carinho, cuidado e presença.
+        </p>
+
+        <p>
+        Eu gosto da forma como você me traz paz.<br>
+        Gosto de como, mesmo no silêncio, eu me sinto segura.<br>
+        Gosto da forma como você existe na minha vida sem forçar, sem invadir… só ficando.
+        </p>
+
+        <p>
+        Você tem sido resposta das minhas orações.<br>
+        Eu falo com Deus sobre você… e agradeço.
+        </p>
+
+        <p>
+        Não é só sobre gostar.<br>
+        É sobre admirar quem você é.<br>
+        Sobre sentir que estou construindo algo com propósito, calma e intenção.
+        </p>
+
+        <p>
+        Eu não sei o que o futuro reserva, mas sei que hoje eu escolho você.<br>
+        E escolho continuar vivendo isso com maturidade, fé e verdade.
+        </p>
+
+        <p>
+        Obrigada por esse primeiro mês.<br>
+        Que seja só o começo.
+        </p>
+
+        <div class="assinatura">
+            <p>
+            Com amor,<br>
+            <strong>Sua namorada e futura esposa 🤍</strong>
+            </p>
+        </div>
+
+        <div class="latim">
+            Tu es domus mea, semper ad te.
+        </div>
+
+    </div>
+
+    <!-- FOTO 2 -->
+    <div class="foto">
+        <img src="foto2.jpg" alt="Nós dois juntos">
+    </div>
+
 </div>
-
-<script>
-function mostrarSurpresa() {
-    document.getElementById("inicio").style.display = "none";
-    document.getElementById("conteudo").style.display = "block";
-    digitarNome();
-    iniciarCoracoes();
-}
-
-function digitarNome() {
-    const texto = "Para o Amor da Minha Vida ❤️";
-    let i = 0;
-    function escrever() {
-        if (i < texto.length) {
-            document.getElementById("nome").innerHTML += texto.charAt(i);
-            i++;
-            setTimeout(escrever, 70);
-        }
-    }
-    escrever();
-}
-
-function iniciarCoracoes() {
-    setInterval(() => {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.innerHTML = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-            heart.remove();
-        }, 5000);
-    }, 300);
-}
-</script>
 
 </body>
 </html>
