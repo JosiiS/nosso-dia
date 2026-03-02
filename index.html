@@ -1,38 +1,55 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <title>Nosso Primeiro Mês 🤍</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     padding: 0;
     font-family: 'Playfair Display', serif;
-    background: linear-gradient(135deg, #0f1c2e, #1f3a5f, #2c5282);
+    background: radial-gradient(circle at top, #1f3a5f, #0f1c2e 75%);
+    overflow-x: hidden;
     color: #1a2a40;
-    animation: fadeIn 2s ease-in-out;
 }
 
+/* ESTRELAS */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: moveStars 80s linear infinite;
+    opacity: 0.35;
+    z-index: -1;
+}
+
+@keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+}
+
+/* CONTAINER */
 .container {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 50px;
-    background: rgba(255, 255, 255, 0.96);
-    border-radius: 25px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-    line-height: 1.9;
+    max-width: 850px;
+    margin: 80px auto;
+    padding: 60px;
+    background: rgba(255,255,255,0.97);
+    border-radius: 30px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    line-height: 2;
+    animation: fadeIn 2s ease;
 }
 
 h1 {
     text-align: center;
     font-family: 'Dancing Script', cursive;
-    font-size: 38px;
+    font-size: 42px;
     color: #1f3a5f;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .section {
@@ -40,34 +57,36 @@ h1 {
 }
 
 p {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .foto {
     text-align: center;
-    margin: 40px 0;
+    margin: 50px 0;
 }
 
 .foto img {
     width: 100%;
-    max-width: 450px;
-    border-radius: 20px;
-    border: 5px solid #2c5282;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    transition: transform 0.6s ease;
+    max-width: 480px;
+    border-radius: 25px;
+    border: 6px solid #2c5282;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    transition: 0.6s ease;
 }
 
 .foto img:hover {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
-.assinatura {
-    margin-top: 30px;
+.divisor {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #2c5282, transparent);
+    margin: 60px 0;
 }
 
 .assinatura strong {
     font-family: 'Dancing Script', cursive;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .latim {
@@ -75,13 +94,64 @@ p {
     text-align: center;
     font-style: italic;
     color: #2c5282;
-    font-size: 18px;
 }
 
-.divisor {
-    height: 1px;
-    background: linear-gradient(to right, transparent, #2c5282, transparent);
-    margin: 50px 0;
+/* BOTÃO SURPRESA */
+.botao-surpresa {
+    display: block;
+    margin: 60px auto 0;
+    background: linear-gradient(135deg, #1f3a5f, #2c5282);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.botao-surpresa:hover {
+    transform: scale(1.08);
+}
+
+/* OVERLAY SURPRESA */
+#overlay {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: fadeIn 1s ease;
+}
+
+.surpresa {
+    background: white;
+    padding: 70px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+}
+
+.surpresa h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 38px;
+    color: #1f3a5f;
+}
+
+.fechar {
+    margin-top: 40px;
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: none;
+    background: #2c5282;
+    color: white;
+    cursor: pointer;
 }
 
 @keyframes fadeIn {
@@ -93,96 +163,132 @@ p {
 
 <body>
 
+<div class="stars"></div>
+
+<!-- Música (opcional, coloque musica.mp3 na pasta) -->
+<audio autoplay loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
 <div class="container">
 
-    <h1>🤍 Nosso Primeiro Mês 🤍</h1>
+<h1>🤍 Nosso Primeiro Mês 🤍</h1>
 
-    <!-- PRIMEIRO TEXTO -->
-    <div class="section">
-        <p><strong>Meu amor,</strong></p>
+<!-- PRIMEIRA DECLARAÇÃO -->
+<div class="section">
+    <p>
+    Desde que você entrou na minha vida, tudo ficou mais bonito.
+    </p>
 
-        <p>
-        Desde que você entrou na minha vida, tudo ficou mais bonito.<br>
-        Você é meu abrigo, meu sorriso favorito, meu melhor presente.
-        </p>
+    <p>
+    Você é meu abrigo, meu sorriso favorito, meu melhor presente.
+    </p>
 
-        <p>
-        Se eu pudesse escolher mil vezes, escolheria você em todas ❤️
-        </p>
+    <p>
+    Se eu pudesse escolher mil vezes, escolheria você em todas ❤️
+    </p>
 
-        <p>
-        Eu te amo infinitamente.
-        </p>
-    </div>
+    <p>
+    Eu te amo infinitamente.
+    </p>
+</div>
 
-    <!-- FOTO 1 -->
-    <div class="foto">
-        <img src="foto1.jpg" alt="Nossa primeira foto">
-    </div>
+<!-- FOTO 1 -->
+<div class="foto">
+    <img src="foto1.jpg" alt="Nosso momento leve">
+</div>
 
-    <div class="divisor"></div>
+<div class="divisor"></div>
 
-    <!-- CARTA DO MÊS -->
-    <div class="section">
+<!-- CARTA PRINCIPAL -->
+<div class="section">
 
-        <p><strong>Meu amor,</strong></p>
+<p><strong>Meu amor,</strong></p>
 
-        <p>
-        Hoje a gente completa um mês. Pode parecer pouco tempo para o mundo…
-        mas, pra mim, foi tempo suficiente para sentir coisas que são grandes.
-        </p>
+<p>
+Hoje a gente completa um mês. Pode parecer pouco tempo para o mundo…
+mas, pra mim, foi tempo suficiente para sentir coisas que são grandes.
+</p>
 
-        <p>
-        Um mês desde que começamos a escrever essa história que, mesmo recente,
-        já tem verdade, carinho, cuidado e presença.
-        </p>
+<p>
+Um mês desde que começamos a escrever essa história que, mesmo recente,
+já tem verdade, carinho, cuidado e presença.
+</p>
 
-        <p>
-        Eu gosto da forma como você me traz paz.<br>
-        Gosto de como, mesmo no silêncio, eu me sinto segura.<br>
-        Gosto da forma como você existe na minha vida sem forçar, sem invadir… só ficando.
-        </p>
+<p>
+Eu gosto da forma como você me traz paz.
+Gosto de como, mesmo no silêncio, eu me sinto segura.
+Gosto da forma como você existe na minha vida sem forçar, sem invadir… só ficando.
+</p>
 
-        <p>
-        Você tem sido resposta das minhas orações.<br>
-        Eu falo com Deus sobre você… e agradeço.
-        </p>
+<p>
+Você tem sido resposta das minhas orações.
+Eu falo com Deus sobre você… e agradeço.
+</p>
 
-        <p>
-        Não é só sobre gostar.<br>
-        É sobre admirar quem você é.<br>
-        Sobre sentir que estou construindo algo com propósito, calma e intenção.
-        </p>
+<p>
+Não é só sobre gostar.
+É sobre admirar quem você é.
+Sobre sentir que estou construindo algo com propósito, calma e intenção.
+</p>
 
-        <p>
-        Eu não sei o que o futuro reserva, mas sei que hoje eu escolho você.<br>
-        E escolho continuar vivendo isso com maturidade, fé e verdade.
-        </p>
+<p>
+Eu não sei o que o futuro reserva, mas sei que hoje eu escolho você.
+E escolho continuar vivendo isso com maturidade, fé e verdade.
+</p>
 
-        <p>
-        Obrigada por esse primeiro mês.<br>
-        Que seja só o começo.
-        </p>
+<p>
+Obrigada por esse primeiro mês.
+Que seja só o começo.
+</p>
 
-        <div class="assinatura">
-            <p>
-            Com amor,<br>
-            <strong>Sua namorada e futura esposa 🤍</strong>
-            </p>
-        </div>
+<p>
+Com amor,<br>
+<span class="assinatura"><strong>Sua namorada e futura esposa 🤍</strong></span>
+</p>
 
-        <div class="latim">
-            Tu es domus mea, semper ad te.
-        </div>
-
-    </div>
-
-    <!-- FOTO 2 -->
-    <div class="foto">
-        <img src="foto2.jpg" alt="Nós dois juntos">
-    </div>
+<div class="latim">
+Tu es domus mea, semper ad te.
+</div>
 
 </div>
+
+<!-- FOTO 2 -->
+<div class="foto">
+    <img src="foto2.jpg" alt="Nosso momento especial">
+</div>
+
+<!-- BOTÃO -->
+<button class="botao-surpresa" onclick="abrirSurpresa()">
+💙 Clique aqui para abrir a surpresa 💙
+</button>
+
+</div>
+
+<!-- SURPRESA -->
+<div id="overlay">
+    <div class="surpresa">
+        <h2>✨ Eu escolho você. Sempre. ✨</h2>
+        <p>
+        Não é só sobre um mês.<br>
+        É sobre querer viver todos os próximos ao seu lado.
+        </p>
+        <p style="margin-top:30px; font-family:'Dancing Script', cursive; font-size:28px;">
+        Você é meu para sempre 💙
+        </p>
+        <button class="fechar" onclick="fecharSurpresa()">Fechar</button>
+    </div>
+</div>
+
+<script>
+function abrirSurpresa() {
+    document.getElementById("overlay").style.display = "flex";
+}
+
+function fecharSurpresa() {
+    document.getElementById("overlay").style.display = "none";
+}
+</script>
 
 </body>
 </html>
