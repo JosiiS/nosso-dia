@@ -1,162 +1,139 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Nosso Primeiro Mês 🤍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>07 • Nosso Primeiro Mês 💙</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Playfair Display', serif;
-    background: radial-gradient(circle at top, #1f3a5f, #0f1c2e 75%);
-    overflow-x: hidden;
-    color: #1a2a40;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* ESTRELAS */
-.stars {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/stardust.png');
-    animation: moveStars 80s linear infinite;
-    opacity: 0.35;
-    z-index: -1;
+body{
+    font-family:'Playfair Display', serif;
+    background:radial-gradient(circle at top,#0a1a3a,#050d1f);
+    color:white;
+    overflow:hidden;
 }
 
-@keyframes moveStars {
-    from { background-position: 0 0; }
-    to { background-position: 1000px 1000px; }
+/* Fundo estrelas */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:radial-gradient(white 1px, transparent 1px);
+    background-size:60px 60px;
+    opacity:0.15;
+    animation:starsMove 80s linear infinite;
 }
 
-/* CONTAINER */
-.container {
-    max-width: 850px;
-    margin: 80px auto;
-    padding: 60px;
-    background: rgba(255,255,255,0.97);
-    border-radius: 30px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-    line-height: 2;
-    animation: fadeIn 2s ease;
+@keyframes starsMove{
+    from{transform:translateY(0);}
+    to{transform:translateY(-1200px);}
 }
 
-h1 {
-    text-align: center;
-    font-family: 'Dancing Script', cursive;
-    font-size: 42px;
-    color: #1f3a5f;
-    margin-bottom: 60px;
+.section{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    text-align:center;
+    opacity:0;
+    transition:opacity 2s ease;
 }
 
-.section {
-    margin-bottom: 50px;
+.active{
+    opacity:1;
 }
 
-p {
-    margin-bottom: 20px;
+h1{
+    font-size:32px;
+    margin-bottom:20px;
 }
 
-.foto {
-    text-align: center;
-    margin: 50px 0;
+.date{
+    letter-spacing:5px;
+    margin-bottom:30px;
+    opacity:0.7;
 }
 
-.foto img {
-    width: 100%;
-    max-width: 480px;
-    border-radius: 25px;
-    border: 6px solid #2c5282;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    transition: 0.6s ease;
+button{
+    padding:15px 35px;
+    border-radius:40px;
+    border:none;
+    background:white;
+    color:#0a1a3a;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.foto img:hover {
-    transform: scale(1.05);
+button:hover{
+    transform:scale(1.08);
 }
 
-.divisor {
-    height: 1px;
-    background: linear-gradient(to right, transparent, #2c5282, transparent);
-    margin: 60px 0;
+/* Envelope */
+.envelope{
+    width:220px;
+    height:140px;
+    background:white;
+    position:relative;
+    border-radius:6px;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
-.assinatura strong {
-    font-family: 'Dancing Script', cursive;
-    font-size: 26px;
+.envelope:before{
+    content:"";
+    position:absolute;
+    border-left:110px solid transparent;
+    border-right:110px solid transparent;
+    border-top:70px solid #dbe6ff;
+    top:0;
 }
 
-.latim {
-    margin-top: 25px;
-    text-align: center;
-    font-style: italic;
-    color: #2c5282;
+/* Carta */
+.letter{
+    background:white;
+    color:#0a1a3a;
+    padding:40px;
+    max-width:750px;
+    border-radius:12px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
+    overflow-y:auto;
+    max-height:85vh;
+    animation:fadeIn 2s ease;
 }
 
-/* BOTÃO SURPRESA */
-.botao-surpresa {
-    display: block;
-    margin: 60px auto 0;
-    background: linear-gradient(135deg, #1f3a5f, #2c5282);
-    color: white;
-    border: none;
-    padding: 15px 35px;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.4s;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
-.botao-surpresa:hover {
-    transform: scale(1.08);
+.photo{
+    margin:30px auto;
 }
 
-/* OVERLAY SURPRESA */
-#overlay {
-    position: fixed;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0,0,0,0.9);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    animation: fadeIn 1s ease;
+.photo img{
+    width:80%;
+    max-width:400px;
+    border:12px solid white;
+    box-shadow:0 15px 35px rgba(0,0,0,0.4);
 }
 
-.surpresa {
-    background: white;
-    padding: 70px;
-    border-radius: 30px;
-    text-align: center;
-    max-width: 600px;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.7);
-}
-
-.surpresa h2 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 38px;
-    color: #1f3a5f;
-}
-
-.fechar {
-    margin-top: 40px;
-    padding: 12px 30px;
-    border-radius: 25px;
-    border: none;
-    background: #2c5282;
-    color: white;
-    cursor: pointer;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.latin{
+    font-family:'Great Vibes', cursive;
+    font-size:32px;
+    margin-top:40px;
 }
 </style>
 </head>
@@ -165,128 +142,85 @@ p {
 
 <div class="stars"></div>
 
-<!-- Música (opcional, coloque musica.mp3 na pasta) -->
-<audio autoplay loop>
-  <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<div class="container">
-
-<h1>🤍 Nosso Primeiro Mês 🤍</h1>
-
-<!-- PRIMEIRA DECLARAÇÃO -->
-<div class="section">
-    <p>
-    Desde que você entrou na minha vida, tudo ficou mais bonito.
-    </p>
-
-    <p>
-    Você é meu abrigo, meu sorriso favorito, meu melhor presente.
-    </p>
-
-    <p>
-    Se eu pudesse escolher mil vezes, escolheria você em todas ❤️
-    </p>
-
-    <p>
-    Eu te amo infinitamente.
-    </p>
+<!-- CENA 1 -->
+<div class="section active" id="scene1">
+    <h1>Existe um momento que muda tudo...</h1>
+    <div class="date">07 • 03 • 2026</div>
+    <button onclick="nextScene('scene1','scene2')">Iniciar nossa história ✨</button>
 </div>
 
-<!-- FOTO 1 -->
-<div class="foto">
-    <img src="foto1.jpg" alt="Nosso momento leve">
+<!-- CENA 2 -->
+<div class="section" id="scene2">
+    <h1>Você tem certeza que quer abrir o que sente?</h1>
+    <button onclick="startMusic(); nextScene('scene2','scene3')">Sim 🤍</button>
 </div>
 
-<div class="divisor"></div>
-
-<!-- CARTA PRINCIPAL -->
-<div class="section">
-
-<p><strong>Meu amor,</strong></p>
-
-<p>
-Hoje a gente completa um mês. Pode parecer pouco tempo para o mundo…
-mas, pra mim, foi tempo suficiente para sentir coisas que são grandes.
-</p>
-
-<p>
-Um mês desde que começamos a escrever essa história que, mesmo recente,
-já tem verdade, carinho, cuidado e presença.
-</p>
-
-<p>
-Eu gosto da forma como você me traz paz.
-Gosto de como, mesmo no silêncio, eu me sinto segura.
-Gosto da forma como você existe na minha vida sem forçar, sem invadir… só ficando.
-</p>
-
-<p>
-Você tem sido resposta das minhas orações.
-Eu falo com Deus sobre você… e agradeço.
-</p>
-
-<p>
-Não é só sobre gostar.
-É sobre admirar quem você é.
-Sobre sentir que estou construindo algo com propósito, calma e intenção.
-</p>
-
-<p>
-Eu não sei o que o futuro reserva, mas sei que hoje eu escolho você.
-E escolho continuar vivendo isso com maturidade, fé e verdade.
-</p>
-
-<p>
-Obrigada por esse primeiro mês.
-Que seja só o começo.
-</p>
-
-<p>
-Com amor,<br>
-<span class="assinatura"><strong>Sua namorada e futura esposa 🤍</strong></span>
-</p>
-
-<div class="latim">
-Tu es domus mea, semper ad te.
+<!-- CENA 3 -->
+<div class="section" id="scene3">
+    <div class="envelope" onclick="nextScene('scene3','scene4')"></div>
+    <p style="margin-top:20px;">Clique no envelope 💌</p>
 </div>
 
-</div>
+<!-- CENA 4 -->
+<div class="section" id="scene4">
+    <div class="letter">
 
-<!-- FOTO 2 -->
-<div class="foto">
-    <img src="foto2.jpg" alt="Nosso momento especial">
-</div>
+        <h2 style="margin-bottom:25px;">1 Mês de Nós 💙</h2>
 
-<!-- BOTÃO -->
-<button class="botao-surpresa" onclick="abrirSurpresa()">
-💙 Clique aqui para abrir a surpresa 💙
-</button>
+        <p><strong>Desde que você entrou na minha vida, tudo ficou mais bonito.</strong><br>
+        Você é meu abrigo, meu sorriso favorito, meu melhor presente.</p>
 
-</div>
+        <p style="margin-top:20px;">Se eu pudesse escolher mil vezes, escolheria você em todas ❤️</p>
 
-<!-- SURPRESA -->
-<div id="overlay">
-    <div class="surpresa">
-        <h2>✨ Eu escolho você. Sempre. ✨</h2>
-        <p>
-        Não é só sobre um mês.<br>
-        É sobre querer viver todos os próximos ao seu lado.
+        <div class="photo">
+            <img src="foto1.jpg" alt="Foto 1">
+        </div>
+
+        <hr style="margin:30px 0;">
+
+        <p><strong>Hoje a gente completa um mês.</strong><br><br>
+
+        Pode parecer pouco tempo para o mundo… mas, pra mim, foi tempo suficiente para sentir coisas que são grandes.<br><br>
+
+        Um mês desde que começamos a escrever essa história que já tem verdade, carinho e presença.<br><br>
+
+        Eu gosto da forma como você me traz paz.<br>
+        Gosto de como, mesmo no silêncio, eu me sinto segura.<br>
+        Gosto da forma como você fica, sem forçar, só permanecendo.<br><br>
+
+        Você tem sido resposta das minhas orações.<br>
+        Eu falo com Deus sobre você… e agradeço.<br><br>
+
+        Eu escolho você.<br>
+        Hoje. Amanhã. Sempre.<br><br>
+
+        Com amor,<br>
+        Sua namorada e futura esposa 🤍
         </p>
-        <p style="margin-top:30px; font-family:'Dancing Script', cursive; font-size:28px;">
-        Você é meu para sempre 💙
-        </p>
-        <button class="fechar" onclick="fecharSurpresa()">Fechar</button>
+
+        <div class="photo">
+            <img src="foto2.jpg" alt="Foto 2">
+        </div>
+
+        <div class="latin">
+            Tu es domus mea, semper ad te.
+        </div>
+
     </div>
 </div>
 
+<audio id="music" src="musica.mp3"></audio>
+
 <script>
-function abrirSurpresa() {
-    document.getElementById("overlay").style.display = "flex";
+function nextScene(current,next){
+    document.getElementById(current).classList.remove("active");
+    setTimeout(()=>{
+        document.getElementById(next).classList.add("active");
+    },1000);
 }
 
-function fecharSurpresa() {
-    document.getElementById("overlay").style.display = "none";
+function startMusic(){
+    document.getElementById("music").play();
 }
 </script>
 
